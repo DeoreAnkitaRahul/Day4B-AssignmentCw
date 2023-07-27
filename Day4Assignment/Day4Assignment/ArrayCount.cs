@@ -8,23 +8,27 @@ namespace Day4Assignment
 {
    public class ArrayCount
     {
-        public void MethodArrayCount()
+        public void UniqueElementMethod()
         {
-            int[] arr = { 1, 2, 3, 4, 2, 5, 6, 7, 6, 8, 9, 9, 1 };
-            int count = 0;
-
+            int[] arr = { 10, 20, 30, 40, 20, 50, 60, 70, 60, 80, 90, 90, 10 };
+            Console.WriteLine("The unique elements in the array are: ");
             for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = i + 1; j < arr.Length; j++)
+                bool unique = true;
+
+                for (int j = 0; j < arr.Length; j++)
                 {
-                    if (arr[i] == arr[j])
+                    if (i != j && arr[i] == arr[j])
                     {
-                        count++;
+                        unique = false;
                         break;
                     }
                 }
+                if (unique)
+                {
+                    Console.Write(arr[i] + " ");
+                }
             }
-            Console.WriteLine("Total number of duplicate elements in the array: " + count);
         }
     }
 }
