@@ -8,27 +8,40 @@ namespace Day4Assignment
 {
    public class ArrayCount
     {
-        public void UniqueElementMethod()
+        public void MethodFrequency()
         {
-            int[] arr = { 10, 20, 30, 40, 20, 50, 60, 70, 60, 80, 90, 90, 10 };
-            Console.WriteLine("The unique elements in the array are: ");
+            string[] arr = { "M", "A", "N", "S", "I", "M", "O", "H", "A", "N" };
+            int[] frequency = new int[arr.Length];
+
             for (int i = 0; i < arr.Length; i++)
             {
-                bool unique = true;
+                int count = 1;
 
-                for (int j = 0; j < arr.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (i != j && arr[i] == arr[j])
+                    if (arr[i] == arr[j])
                     {
-                        unique = false;
-                        break;
+                        count++;
+                        frequency[j] = -1;
                     }
                 }
-                if (unique)
+
+                if (frequency[i] != -1)
                 {
-                    Console.Write(arr[i] + " ");
+                    frequency[i] = count;
                 }
             }
+
+            Console.WriteLine("Frequency of each element in the array: ");
+
+            for (int i = 0; i < frequency.Length; i++)
+            {
+                if (frequency[i] != -1)
+                {
+                    Console.WriteLine(arr[i] + ":" + frequency[i] + " times");
+                }
+            }
+
         }
     }
 }

@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             ArrayCount arrayCount = new ArrayCount();
-            arrayCount.UniqueElementMethod();
+            arrayCount.MethodFrequency();
             Console.ReadLine();
         }
     }
