@@ -8,40 +8,27 @@ namespace Day4Assignment
 {
    public class ArrayCount
     {
-        public void MethodFrequency()
+        public void MinMaxMethod()
         {
-            string[] arr = { "M", "A", "N", "S", "I", "M", "O", "H", "A", "N" };
-            int[] frequency = new int[arr.Length];
+            int[] arr = { 57, 28, 10, 35, 89, 94, 60, 25, 71 };
 
-            for (int i = 0; i < arr.Length; i++)
+            int min = arr[0];
+            int max = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
             {
-                int count = 1;
-
-                for (int j = i + 1; j < arr.Length; j++)
+                if (arr[i] < min)
                 {
-                    if (arr[i] == arr[j])
-                    {
-                        count++;
-                        frequency[j] = -1;
-                    }
+                    min = arr[i];
                 }
 
-                if (frequency[i] != -1)
+                if (arr[i] > max)
                 {
-                    frequency[i] = count;
+                    max = arr[i];
                 }
             }
-
-            Console.WriteLine("Frequency of each element in the array: ");
-
-            for (int i = 0; i < frequency.Length; i++)
-            {
-                if (frequency[i] != -1)
-                {
-                    Console.WriteLine(arr[i] + ":" + frequency[i] + " times");
-                }
-            }
-
+            Console.WriteLine("Minimum element in the array is: " + min);
+            Console.WriteLine("Maximum element in the array is: " + max);
         }
     }
 }
