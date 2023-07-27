@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             ArrayCount arrayCount = new ArrayCount();
-            arrayCount.MinMaxMethod();
+            arrayCount.DisplayPattern();
             Console.ReadLine();
         }
     }

@@ -8,27 +8,16 @@ namespace Day4Assignment
 {
    public class ArrayCount
     {
-        public void MinMaxMethod()
+        public void DisplayPattern()
         {
-            int[] arr = { 57, 28, 10, 35, 89, 94, 60, 25, 71 };
-
-            int min = arr[0];
-            int max = arr[0];
-
-            for (int i = 1; i < arr.Length; i++)
+            for (int i = 8; i >= 1; i--)
             {
-                if (arr[i] < min)
+                for (int j = 1; j <= i; j++)
                 {
-                    min = arr[i];
+                    Console.Write("*");
                 }
-
-                if (arr[i] > max)
-                {
-                    max = arr[i];
-                }
+                Console.WriteLine();
             }
-            Console.WriteLine("Minimum element in the array is: " + min);
-            Console.WriteLine("Maximum element in the array is: " + max);
         }
     }
 }
